@@ -1,0 +1,33 @@
+GET http://localhost:5281/times
+
+###
+
+GET http://localhost:5281/times/6
+
+###
+
+POST http://localhost:5281/times
+Content-Type: application/json
+
+{
+    "name": "Corinthians",
+    "city": "Sao Paulo",
+    "titlesBrazil": 5,
+    "titlesInternacionais": 1
+}
+
+###
+
+PUT http://localhost:5281/times/2
+Content-Type: application/json
+
+{
+    "name": "Milan",
+    "city": "Cajamar",
+    "titlesBrazil": 5,
+    "titlesInternacionais": 1
+}
+
+###
+
+DELETE  http://localhost:5281/times/3
