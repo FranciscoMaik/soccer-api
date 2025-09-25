@@ -12,6 +12,8 @@ A SoccerApi é uma aplicação web que permite o gerenciamento completo de times
 - **ASP.NET Core** - Web API
 - **Entity Framework Core 7.0** - ORM para acesso a dados
 - **SQLite** - Banco de dados
+- **Swagger/OpenAPI** - Documentação da API
+- **Scalar** - Interface moderna para documentação da API
 - **C#** - Linguagem de programação
 
 ## 📦 Estrutura do Projeto
@@ -87,6 +89,15 @@ public class Time
 5. **Acesse a API:**
    - HTTP: `http://localhost:5281`
    - HTTPS: `https://localhost:7151`
+
+## 📚 Documentação da API
+
+A API possui documentação interativa disponível através de duas interfaces:
+
+- **Swagger UI**: `https://localhost:7151/swagger` ou `http://localhost:5281/swagger`
+- **Scalar (Recomendado)**: `https://localhost:7151/scalar/v1` ou `http://localhost:5281/scalar/v1`
+
+A documentação Scalar oferece uma interface moderna e intuitiva para testar os endpoints da API diretamente no navegador.
 
 ## 📋 Exemplos de Uso
 
