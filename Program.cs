@@ -1,11 +1,29 @@
 using SoccerApi;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDBContext>(options => options.UseSqlite("Data Source=soccer.db"));
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+    app.MapScalarApiReference(options =>
+    {
+        options
+            .WithTitle("Minha API")
+            .WithTheme(ScalarTheme.BluePlanet)
+            .WithOpenApiRoutePattern("/swagger/v1/swagger.json")
+            .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient);
+    });
+}
 
 app.MapGet("/times", async (AppDBContext db) =>
 {
